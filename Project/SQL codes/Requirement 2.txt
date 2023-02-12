@@ -1,0 +1,16 @@
+---------for schoolwise-------------
+select d.school_title, count(*) AS Count
+from section_t AS S, department_t AS D
+where S.dept_id=D.dept_id AND
+ enroll_capacity<50
+group BY S.dept_id;
+
+
+---------for total----------
+select sum(Count) AS total
+from(
+select d.school_title, count(*) AS Count
+from section_t AS S, department_t AS D
+where S.dept_id=D.dept_id AND
+ enroll_capacity<50
+group BY S.dept_id) AS total

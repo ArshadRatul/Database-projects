@@ -1,0 +1,14 @@
+INSERT INTO section_t VALUES('1','1','Autumn','MW','2020','50','43','-1','8:00','9:30','ACN201','BBA','6054','BC2009-S');
+INSERT INTO section_t VALUES('2','1','Autumn','ST','2020','50','45','-1','9:30','11:00','ACN201','BBA','3563','BC2009-S');
+INSERT INTO section_t VALUES('2','2','Autumn','ST','2020','52','47','-1','11:00','12:30','ACN201','BBA','3600','BC2009-S');
+
+INSERT INTO section_t VALUES('1','1','Autumn','ST','2020','45','12','-1','15:30','17:00','BCB103','PHY','5212','BC4017C-S');
+INSERT INTO section_t VALUES('2','2','Autumn','MW','2020','45','12','0','11:00','12:30','BCB103L','PHY','5212','BC4017C-S');
+
+INSERT INTO section_t VALUES('1','1','Autumn','ST','2020','38','33','-1','9:30','11:00','CSC101','CSE','4241','CSCLab4-S');
+INSERT INTO section_t VALUES('1','1','Autumn','S','2020','38','33','0','11:00','12:30','CSC101L','CSE','4241','CSCLab4-S');
+
+INSERT INTO section_t VALUES('1','1','Autumn','ST','2020','37','32','-1','9:30','11:00','CSE104','CSE','4427','BC10018-S');
+INSERT INTO section_t VALUES('1','1','Autumn','M','2020','37','32','0','11:00','12:30','CSE104L','CSE','4427','CENLAB-S');
+
+INSERT INTO section_t VALUES('1','1','Autumn','S','2020','45','36','-1','8:00','9:30','CSE307','CSE','4331','BC6013-S');

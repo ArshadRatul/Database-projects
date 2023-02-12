@@ -1,0 +1,92 @@
+---------School---------
+INSERT INTO school_t VALUES('SETS','School Of Engineering,Technology and Sciences');
+INSERT INTO school_t VALUES('SLASS','School Of Liberal Arts and Social Sciences');
+INSERT INTO school_t VALUES('SBE','School Of Business and Enterpreneurship');
+INSERT INTO school_t VALUES('SELS','School Of Environment and Life Sciences');
+INSERT INTO school_t VALUES('SPPH','School Of Pharmacy and Public Health');
+
+--------Department--------------------
+INSERT INTO department_t VALUES('CSE','Computer Science and Engineering','SETS');
+INSERT INTO department_t VALUES('EEE','Electrical and Electronic Engineering','SETS');
+INSERT INTO department_t VALUES('PHY','Physical Sciences','SETS');
+INSERT INTO department_t VALUES('DESM','Environmental Science and Management');
+INSERT INTO department_t VALUES('PHY','Physical Sciences','SELS');
+INSERT INTO department_t VALUES('CMN','Media and Communication','SLASS');
+INSERT INTO department_t VALUES('ELT','English and Modern Literature','SLASS');
+INSERT INTO department_t VALUES('PHA','Pharmacy','SPPH');
+INSERT INTO department_t VALUES('GSG','Global Studies and Governence','SLASS');
+
+---3depts are not added yet above----------
+
+------COURSE------------
+INSERT INTO course_t VALUES('AAT101','Art and Aesthetics','3'); slass
+INSERT INTO course_t VALUES('BDS109','Bangladesh 1971 through the Lenses','3');
+INSERT INTO course_t VALUES('ACN201','Principles of Accounting','3'); sbe
+INSERT INTO course_t VALUES('ACN201','Principles of Accounting','3');
+INSERT INTO course_t VALUES('BCB103','Introductory Chemistry I Lecture','3'); SELS
+INSERT INTO course_t VALUES('BCB103L','Introductory Chemistry I Lecture Lab','1');
+INSERT INTO course_t VALUES('CSC101','Introduction to Computer Science','3');
+INSERT INTO course_t VALUES('CSC101L','Lab for CSC101','1');
+INSERT INTO course_t VALUES('CSE104','Electrical Circuit Analysis','3');
+INSERT INTO course_t VALUES('CSE104L','Lab work based on CSE 104','1');
+INSERT INTO course_t VALUES('CSE307','System Analysis and Design','3');
+
+--------prereq-------------
+INSERT INTO course_prerequisite_t VALUES('AAT101','AAT101');
+INSERT INTO course_prerequisite_t VALUES('BDS109','BDS109');
+INSERT INTO course_prerequisite_t VALUES('ACN201','ACN201');
+INSERT INTO course_prerequisite_t VALUES('BCB103','BCB103');
+INSERT INTO course_prerequisite_t VALUES('BCB103L','BCB103L');
+INSERT INTO course_prerequisite_t VALUES('CSC101','CSC101');
+INSERT INTO course_prerequisite_t VALUES('CSC101L','CSC101L');
+INSERT INTO course_prerequisite_t VALUES('CSE104','CSE104');
+INSERT INTO course_prerequisite_t VALUES('CSE104','CEN104');
+INSERT INTO course_prerequisite_t VALUES('CSE104L','CSE104L');
+INSERT INTO course_prerequisite_t VALUES('CSE104','CEN104L');
+INSERT INTO course_prerequisite_t VALUES('CSE307','CSE307');
+INSERT INTO course_prerequisite_t VALUES('CSE307','CSC405');
+INSERT INTO course_prerequisite_t VALUES ('CSE307','CEN405');
+----------faculty------------------------
+INSERT INTO faculty_t VALUES('2404','AAT101','MR Shohail Rayhan Muhammad Tarek');
+INSERT INTO faculty_t VALUES('4146','BDS109','DR Zakir Hossain Raju');
+INSERT INTO faculty_t VALUES('3563','ACN201','MR Mohammed Naveed Siddiquee');
+INSERT INTO faculty_t VALUES('3600','ACN201','MR Prahallad Chandra Das');
+INSERT INTO faculty_t VALUES('5212','BCB103','MR Chowdhury Kamrul Hasan');
+INSERT INTO faculty_t VALUES('5212','BCB103L','MR Chowdhury Kamrul Hasan');
+INSERT INTO faculty_t VALUES('4241','CSC101','DR Md. Ashraful Amin');
+INSERT INTO faculty_t VALUES('4241','CSC101L','DR Md. Ashraful Amin');
+INSERT INTO faculty_t VALUES('4427','CSC104','MR Rubayed Mehedi');
+INSERT INTO faculty_t VALUES('4427','CSC104L','MR Rubayed Mehedi');
+INSERT INTO faculty_t VALUES('4331','CSE307','MS Sabrina Alam');
+--------------classroom---------
+roomid,secno,cap
+INSERT INTO classroom_t VALUES('BC7002-S','1','50');
+INSERT INTO classroom_t VALUES('BC7002-S','1','50');
+INSERT INTO classroom_t VALUES('BC2009-S','1','50');
+INSERT INTO classroom_t VALUES('BC4017C-S','1','25');
+INSERT INTO classroom_t VALUES('BC4017C-S','1','25');
+INSERT INTO classroom_t VALUES('CSCLab4-S','1','35');
+INSERT INTO classroom_t VALUES('CSCLab4-S','1','25');
+INSERT INTO classroom_t VALUES('C2002-S','1','20');
+INSERT INTO classroom_t VALUES('CENLAB-S','4','45');
+INSERT INTO classroom_t VALUES('BC6009-S','1','50');
+INSERT INTO classroom_t VALUES('','','');
+---------section-----------
+block_status dept_id ,course_id, faculty_id, section_no,session_name,syear,
+room_id,capacity, enroll_capacity int(2), start_time,end_time,days
+
+INSERT INTO section_t VALUES('-1','','AAT101','2404','1','Autumn','2020','BC7002-S','23','55','11:00','12:30','MW');
+INSERT INTO section_t VALUES('-1','GSG','BDS109','6054','1','Autumn','2020','BC7002-S','43','50','14:00','15:30','ST');
+INSERT INTO section_t VALUES('-1','BBA','ACN201','3563','1','Autumn','2020','BC2009-S','45','50','8:00','9:30','ST');
+INSERT INTO section_t VALUES('-1','BBA','ACN201','3600','2','Autumn','2020','BC2009-S','50','45','9:30','11:00','ST');
+INSERT INTO section_t VALUES('-1','PHY','BCB103','5212','1','Autumn','2020','BC4017C-S','12','45','15:30','17:00','MW');
+INSERT INTO section_t VALUES('0','PHY','BCB103L','5212','1','Autumn','2020','BC4017C-S','12','45','11:00','12:30','R');
+INSERT INTO section_t VALUES('-1','CSE','CSC101','4241','1','Autumn','2020','33','38','9:30','11:00','ST');
+INSERT INTO section_t VALUES('0','CSE','CSC101L','4241','1','Autumn','2020','33','38','11:00','12:30','S');
+INSERT INTO section_t VALUES('0','CSE','CSE104','4427','1','Autumn','2020','0','35','9:30','11:00','ST');
+INSERT INTO section_t VALUES('0','CSE','CSE104L','4427','4','Autumn','2020','0','35','9:30','11:00','M');
+INSERT INTO section_t VALUES('-1','CSE','CSE307','4331','1','Autumn','2020','41','46','8:00','9:30','ST');
+
+
+
+

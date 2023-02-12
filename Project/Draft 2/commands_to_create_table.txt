@@ -1,0 +1,96 @@
+-------CREATE SCHOOL---------
+
+CREATE TABLE school_t(
+	school_title CHAR(5) NOT NULL,
+    school_name VARCHAR(50) NOT NULL,
+    
+    CONSTRAINT school_PK PRIMARY KEY (school_title)
+);
+
+-------DEPARTMENT---------
+ CREATE TABLE department_t(
+	dept_id CHAR(6) NOT NULL,
+    dept_name VARCHAR(50) NOT NULL,
+    school_title CHAR(5),
+    
+    CONSTRAINT dept_PK PRIMARY KEY (dept_id),
+    CONSTRAINT dept_FK FOREIGN KEY (school_title) REFERENCES school_t(school_title)
+    
+);
+
+------COURSE---------
+CREATE TABLE course_t (
+  course_id VARCHAR(10) NOT NULL,
+  course_name VARCHAR(50) NOT NULL,
+  credit_hour INTEGER(1) NOT NULL,
+  
+  
+    CONSTRAINT course_pk1 PRIMARY KEY (course_id)
+    
+    
+    
+);
+
+----PREREQUISTE------
+CREATE TABLE course_prerequisite_t(
+    course_id VARCHAR(10) NOT NULL,
+    prerequisite VARCHAR(10) NOT NULL,
+    
+    CONSTRAINT course_prerequisite_pk PRIMARY KEY (prerequisite),
+    CONSTRAINT course_prerequisite_fk FOREIGN KEY (course_id) REFERENCES course_t(course_id)
+);
+
+------FACULTY--------
+CREATE TABLE faculty_t(
+  faculty_id CHAR(5) NOT NULL,
+  course_id VARCHAR(10),
+  faculty_name VARCHAR(50) NOT NULL,
+    
+  CONSTRAINT faculty_pk PRIMARY KEY (faculty_id),
+  CONSTRAINT faculty_fk FOREIGN KEY (course_id) REFERENCES course_t(course_id)  
+
+
+
+);
+
+
+
+
+-------section-------
+Create table section_t(
+    block_status boolean,
+    dept_id CHAR(6) ,
+    course_id varchar(10) ,
+    faculty_id char(5) ,
+    section_no int(2) not null,
+    session_name varchar(10) not null,
+    syear year not null,
+    room_id varchar(10),
+    capacity int(2),
+    enroll_capacity int(2),
+    start_time time,
+    end_time time,
+    days char(2),
+    constraint Section_PK primary key (section_no,session_name,syear,course_id,dept_id),
+    constraint Section_FK1 foreign key (course_id) references course_t (course_id),
+    constraint Section_FK2 foreign key (faculty_id) references faculty_t (faculty_id),
+    CONSTRAINT Section_FK3 foreign key (dept_id) REFERENCES department_t(dept_id)
+
+);
+
+---------classroom--------------
+CREATE TABLE classroom_t(
+  room_id VARCHAR(10) NOT NULL,
+  section_no INTEGER(2),
+  room_capacity INTEGER(2),
+    
+  CONSTRAINT classroom_pk PRIMARY KEY (room_id),
+  CONSTRAINT classroom_fk FOREIGN KEY (section_no) REFERENCES section_t(section_no)
+
+);
+ALTER TABLE section_t
+ADD CONSTRAINT section_FK4 FOREIGN KEY (room_id) REFERENCES classroom_t(room_id);
+
+
+
+---------------------
